@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 
 app.set("view engine", "ejs");
-
+//this line does not do anything 
 // Routes start here
 
 app.get("/reminders", reminderController.list);
