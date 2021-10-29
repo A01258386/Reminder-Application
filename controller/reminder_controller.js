@@ -1,3 +1,4 @@
+const { log } = require("console");
 let database = require("../database");
 
 let remindersController = {
@@ -41,7 +42,8 @@ let remindersController = {
   },
 
   update: (req, res) => {
-    // implement this code
+   let { title, description, completed } = req.body; 
+   let { id } = req.params; //let id = req.params.id;
   },
 
   delete: (req, res) => {
