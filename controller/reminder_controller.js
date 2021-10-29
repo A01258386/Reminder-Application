@@ -49,7 +49,7 @@ let remindersController = {
     });
     reminderToUpdate.title = title;
     reminderToUpdate.description = description;
-    reminderToUpdate.completed = completed;
+    reminderToUpdate.completed = eval(completed); //fix the completed view problem
    res.redirect("/reminder/"+id);
   },
 
