@@ -44,6 +44,7 @@ let remindersController = {
   update: (req, res) => {
    let { title, description, completed } = req.body; 
    let { id } = req.params; //let id = req.params.id;
+   res.redirect("/reminder/"+id);
   },
 
   delete: (req, res) => {
