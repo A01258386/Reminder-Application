@@ -42,25 +42,42 @@ let remindersController = {
   },
 
   update: (req, res) => {
-   let { title, description, completed } = req.body; 
-   let { id } = req.params; //let id = req.params.id;
-    let reminderToUpdate = database.cindy.reminders.find(function (reminder) {
-      return reminder.id == id;
+    // app.post("/reminder/update/:id", reminderController.update);
+    let id = parseInt(req.params.id) - 1;
+    let reminderToFind = req.params.id;
+    // let id = parseInt
+
+    let searchResult = database.cindy.reminders.find(function (reminder) {
+      return reminder.id == reminderToFind;
     });
-    reminderToUpdate.title = title;
-    reminderToUpdate.description = description;
-    reminderToUpdate.completed = eval(completed); //fix the completed view problem
-   res.redirect("/reminder/"+id);
+    // let updateTitle = searchResult.title;
+    // let updateDesc = searchResult.description;
+    // let updateComplete = searchResult.completed;
+    let updateTitle = req.body.title;
+    let updateDesc = req.body.description;
+    let updateComplete = req.body.completed;
+
+    // console.log(database.cindy.reminders[id])
+
+    reminderToEdit = database.cindy.reminders[id];
+    searchResult.title = updateTitle;
+    searchResult.description = updateDesc;
+    searchResult.completed = updateComplete;
+    
+    // console.log(database.cindy.reminders[id])
+    console.log(searchResult)
+  
+    // res.redirect("/reminder/" + reminderToFind);
+
+    // console.log(database.cindy.reminders[id])
+    // console.log(reminderToUpdate)
+    // console.log(updateTitle)
+    // console.log(updateDesc)
+    // console.log(updateComplete)
   },
 
   delete: (req, res) => {
     // Implement this code
-    let { id } = req.params;//let id = req.params.id;
-    let reminderToDelete = database.cindy.reminders.findIndex(function (reminder) {
-      return reminder.id == id;
-    });
-    database.cindy.reminders.splice(reminderToDelete, 1);
-    res.redirect("/reminders");
   },
 };
 
