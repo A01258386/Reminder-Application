@@ -1,4 +1,3 @@
-const { log } = require("console");
 let database = require("../database");
 
 let remindersController = {
@@ -42,15 +41,19 @@ let remindersController = {
   },
 
   update: (req, res) => {
-   let { title, description, completed } = req.body; 
-   let { id } = req.params; //let id = req.params.id;
-    let reminderToUpdate = database.cindy.reminders.find(function (reminder) {
+    // implement this code
+    let { title, description, completed } = req.body;
+    let { id } = req.params;
+    let searchResult = database.cindy.reminders.find(function (reminder) {
       return reminder.id == id;
     });
-    reminderToUpdate.title = title;
-    reminderToUpdate.description = description;
-    reminderToUpdate.completed = eval(completed); //fix the completed view problem
-   res.redirect("/reminder/"+id);
+    
+    searchResult.title = title
+    searchResult.description = description
+    searchResult.completed = stringToBloo(completed)
+    
+    res.redirect(`/reminder/${id}`)
+
   },
 
   delete: (req, res) => {
@@ -65,3 +68,16 @@ let remindersController = {
 };
 
 module.exports = remindersController;
+
+function stringToBloo(mystring){
+  if (mystring == 'true'){
+    return true
+  }else{
+    if (mystring == 'false'){
+      return false
+    }
+    else{
+      return undefined
+    }
+  }
+}
