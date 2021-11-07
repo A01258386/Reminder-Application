@@ -1,5 +1,6 @@
 const { log } = require("console");
 let database = require("../database");
+// const fs = require("fs").promises
 
 let remindersController = {
   list: (req, res) => {
@@ -50,34 +51,39 @@ let remindersController = {
     let searchResult = database.cindy.reminders.find(function (reminder) {
       return reminder.id == reminderToFind;
     });
-    // let updateTitle = searchResult.title;
-    // let updateDesc = searchResult.description;
-    // let updateComplete = searchResult.completed;
-    let updateTitle = req.body.title;
+    let updateTitle = req.body.title
     let updateDesc = req.body.description;
     let updateComplete = req.body.completed;
+    if (updateComplete == "false") {
+      updateComplete = false;
+    } else if (updateComplete == "true") {
+      updateComplete = true;
+    }
 
     // console.log(database.cindy.reminders[id])
 
-    reminderToEdit = database.cindy.reminders[id];
+    // reminderToEdit = database.cindy.reminders[id];
     searchResult.title = updateTitle;
     searchResult.description = updateDesc;
     searchResult.completed = updateComplete;
-    
-    // console.log(database.cindy.reminders[id])
-    console.log(searchResult)
-  
-    // res.redirect("/reminder/" + reminderToFind);
 
-    // console.log(database.cindy.reminders[id])
-    // console.log(reminderToUpdate)
-    // console.log(updateTitle)
-    // console.log(updateDesc)
-    // console.log(updateComplete)
+    // let index = database.cindy.reminders.map(function(e) { return e.id; }).indexOf(1);
+    // keys = Object.keys(database.cindy.reminders[index])
+    // console.log(keys)
+
+  
+    res.redirect("/reminder/" + reminderToFind);
   },
 
   delete: (req, res) => {
-    // Implement this code
+    let reminderToFind = req.params.id;
+
+    let searchResult = database.cindy.reminders.find(function (reminder) {
+      return reminder.id == reminderToFind;
+    });
+
+    database.cindy.reminders.splice(searchResult, 1)
+    res.redirect("/reminders");
   },
 };
 
