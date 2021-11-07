@@ -1,11 +1,11 @@
 
 const Userdata = require("../userInfo")
-
+//const Userdata = require("../controller/auth_controller")
 
 const userModel = {
     findOne: (email) => {
+      console.log("current user data:",Userdata)
       const user = Userdata.find((user) => user.email === email);
-      console.log(user)
       if (user) {
         return user;
       }else {
