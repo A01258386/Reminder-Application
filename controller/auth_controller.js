@@ -1,5 +1,5 @@
 let User = require("../models/userModel");
-
+const passport = require("../middleware/passport");
 let authController = {
   logout: (req, res) => {
     req.logout();
@@ -13,9 +13,11 @@ let authController = {
     res.render("auth/register");
   },
 
-  loginSubmit: (req, res) => {
-    // implement
-  },
+  loginSubmit:
+      passport.authenticate("local",{
+        successRedirect : "/reminders",
+        failureRedirect : "/login",
+}),
 
   registerSubmit: (req, res) => {
     const { name, email, password } = req.body;
