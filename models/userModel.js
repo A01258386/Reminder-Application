@@ -34,6 +34,14 @@ const userModel = {
     }
     throw new Error(`Couldn't find user with id: ${id}`);
   },
+  createUser: (name, email, password) => {
+    database.push({
+      id: database.length + 1,
+      name: name,
+      email: email,
+      password: password
+    });
+  }
 };
 
 module.exports = { database, userModel };
