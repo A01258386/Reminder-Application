@@ -6,7 +6,7 @@ const reminderController = require("./controller/reminder_controller");
 const authController = require("./controller/auth_controller");
 const session = require("express-session");
 const expressLayouts = require("express-ejs-layouts")
-
+const dotenv = require('dotenv').config()
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(express.urlencoded({ extended: false }));

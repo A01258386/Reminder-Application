@@ -1,7 +1,7 @@
 const express = require("express");
 const passport = require("../middleware/passport");
 const { forwardAuthenticated } = require("../middleware/checkAuth");
-
+const authController = require("../controller/auth_controller");
 const router = express.Router();
 
 //inputs have to be named on the ejs file
@@ -24,5 +24,6 @@ router.get("/logout", (req, res) => {
   req.logout();
   res.redirect("/login");
 });
-
+router.get('/github', authController.gitLogin);
+router.get('/github/callback', authController.gitLoginCB);
 module.exports = router;
