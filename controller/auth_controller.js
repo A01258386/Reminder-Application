@@ -41,4 +41,4 @@ let authController = {
   }
 };
 
-module.exports = authController;
+module.exports = authController,userData;
