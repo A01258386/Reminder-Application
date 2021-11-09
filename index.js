@@ -3,7 +3,6 @@ const expressLayouts = require("express-ejs-layouts");
 const session = require("express-session");
 const path = require("path");
 const port = process.env.port || 8000;
-const fs = require("fs");
 const app = express();
 
 app.set("view engine", "ejs");
@@ -22,10 +21,7 @@ app.use(
 );
 
 const passport = require("./middleware/passport");
-const { authRouter, reminderRouter } = require("./routes")
-
-const upload = require("./middleware/upload");
-const checkAuth = require("./middleware/checkAuth");
+const { authRouter, reminderRouter,uploadRouter } = require("./routes")
 
 // Middleware for express
 app.use(express.json());
@@ -53,15 +49,7 @@ app.use((req, res, next) => {
   next()
 });
 
-app.post("/upload",  upload.single("file"), async (req, res) => {
-  try {
-    const url = await require("imgur").uploadFile(`./uploads/${req.file.filename}`)
-    res.json({ url: url.link });
-    fs.unlinkSync(`./uploads/${req.file.filename}`);
-  } catch (err) {
-    console.log(err);
-  }
-});
+app.use("/upload" ,uploadRouter );
 
 app.use("/reminder", reminderRouter);
 

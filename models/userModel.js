@@ -1,8 +1,10 @@
+const defaultImage = "https://i.imgur.com/9pNffkj.png"
 const database = [
     {
       id: 1,
       name: "Jimmy Smith",
       email: "jimmy123@gmail.com",
+      image:defaultImage,
       password: "jimmy123!",
       reminders: [{id: 1, title: "abc", description: "abcabc", completed: false}]
     },
@@ -10,6 +12,7 @@ const database = [
       id: 2,
       name: "Johnny Doe",
       email: "johnny123@gmail.com",
+      image:defaultImage,
       password: "johnny123!",
       reminders: [{id: 1, title: "abc", description: "abcabc", completed: false}]
     },
@@ -17,6 +20,7 @@ const database = [
       id: 3,
       name: "Jonathan Chen",
       email: "jonathan123@gmail.com",
+      image:defaultImage,
       password: "jonathan123!",
       reminders: []
     },
@@ -24,6 +28,7 @@ const database = [
       id: 4,
       name: "Jenny Doe",
       email: "selo@a",
+      image:defaultImage,
       password: "selo",
       reminders: []
     }
@@ -49,6 +54,7 @@ const database = [
         id: database.length + 1,
         name: user.name,
         email: user.email,
+        image:defaultImage,
         password: user.password,
         reminders: []
       };
