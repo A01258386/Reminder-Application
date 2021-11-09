@@ -27,6 +27,16 @@ start working on github access
 
 
 Gokce Gokmen:
+Added registration feature and redirect
+if user not logged in ,he/she is NOT able to see 'create' and 'list reminders'
+Added log in feature
+If user logged in , he/she is able to see 'create' and 'list reminders' and see his/her reminders, name
+middle for ensuring users are logged in and forward authentication created
+user model and routes created
+
+
+
+
 
 
 Yi Dong:
