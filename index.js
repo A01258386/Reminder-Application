@@ -24,6 +24,7 @@ app.use(
 const passport = require("./middleware/passport");
 const { authRouter, reminderRouter } = require("./routes")
 
+
 // Middleware for express
 app.use(express.json());
 app.use(expressLayouts);
@@ -44,11 +45,12 @@ app.use((req, res, next) => {
 });
 
 app.use((req, res, next) => {
-  res.locals=({
+  res.locals = ({
     user: req.user || null,
   });
   next()
 });
+
 
 app.use("/reminder", reminderRouter);
 
