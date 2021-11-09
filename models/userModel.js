@@ -4,28 +4,32 @@ const database = [
       name: "Jimmy Smith",
       email: "jimmy123@gmail.com",
       password: "jimmy123!",
-      reminders: [{id: 1, title: "abc", description: "abcabc", completed: false}]
+      reminders: [{id: 1, title: "abc", description: "abcabc", completed: false}],
+      role: "admin"
     },
     {
       id: 2,
       name: "Johnny Doe",
       email: "johnny123@gmail.com",
       password: "johnny123!",
-      reminders: [{id: 1, title: "abc", description: "abcabc", completed: false}]
+      reminders: [{id: 1, title: "abc", description: "abcabc", completed: false}],
+      role: "user"
     },
     {
       id: 3,
       name: "Jonathan Chen",
       email: "jonathan123@gmail.com",
       password: "jonathan123!",
-      reminders: []
+      reminders: [],
+      role: "user"
     },
     {
       id: 4,
       name: "Jenny Doe",
       email: "selo@a",
       password: "selo",
-      reminders: []
+      reminders: [],
+      role: "user"
     }
   ];
   
