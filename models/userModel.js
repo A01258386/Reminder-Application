@@ -26,7 +26,7 @@ const database = [
       email: "selo@a",
       password: "selo",
       reminders: []
-    }
+    },
   ];
   
   const userModel = {
@@ -58,6 +58,18 @@ const database = [
       database.push(newUser);
       return newUser;
     },
+    findOrAppendGithub:(profile)=>{
+      if (profile){
+        let thisuser = database.find((user)=>user.githubID === profile.id)
+        if (thisuser){
+          return thisuser;
+        }else{
+          thisuser = { id:database.length + 1, name:profile["displayName"],githubID:profile.id,role:"user",reminders: []}
+          database.push(thisuser)
+          return thisuser
+        }
+      }
+    }
   };
   
   module.exports = { database, userModel };

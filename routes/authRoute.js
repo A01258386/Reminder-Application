@@ -10,5 +10,6 @@ app.post("/login",passport.authenticate("local", {
     failureRedirect: "/auth/login",
   }));
 app.get("/logout", authController.logout);
-
+app.get('/github',authController.gitLogin);
+app.get('/github/callback',authController.gitLoginCB)
 module.exports = app;

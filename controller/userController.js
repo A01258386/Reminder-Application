@@ -22,7 +22,17 @@ function isUserValid(user, password) {
   return user.password === password;
 }
 
+const findOrAppend = (profile) =>{
+  let thisuser = userModel.findOrAppendGithub(profile);
+  if (thisuser){
+    return thisuser
+  }else{
+    return null;
+  }
+};
+
 module.exports = {
   getUserByEmailIdAndPassword,
   getUserById,
+  findOrAppend,
 };

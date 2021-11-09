@@ -15,7 +15,7 @@ let authController = {
 
   loginSubmit:
       passport.authenticate("local",{
-        successRedirect : "/reminders",
+        successRedirect : "/reminder",
         failureRedirect : "/login",
 }),
 
@@ -31,6 +31,15 @@ let authController = {
       res.redirect("/reminder");
     });
   },
+
+  gitLogin: passport.authenticate("github"),
+  gitLoginCB: passport.authenticate("github",  
+  { successRedirect : "/reminder",
+    failureRedirect: '/auth/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/reminder');
+  }
 };
 
 module.exports = authController;
