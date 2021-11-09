@@ -24,6 +24,7 @@ app.use(
 const passport = require("./middleware/passport");
 const { authRouter, reminderRouter } = require("./routes")
 
+const upload = require("./middleware/upload");
 
 // Middleware for express
 app.use(express.json());
@@ -51,6 +52,16 @@ app.use((req, res, next) => {
   next()
 });
 
+app.post("/upload", upload.single("file"), async (req, res) => {
+  try {
+    console.log(req.file);
+    const url = await require("imgur").uploadFile(`./uploads/${req.file.filename}`)
+    res.json({ url: url });
+    fs.unlinkSync(`./uploads/${file.filename}`);
+  } catch (err) {
+    console.log(err);
+  }
+});
 
 app.use("/reminder", reminderRouter);
 
