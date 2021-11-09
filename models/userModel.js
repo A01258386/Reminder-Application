@@ -35,11 +35,14 @@ const database = [
   
   const userModel = {
     findOne: (email) => {
+      console.log("current user data:",database)
       const user = database.find((user) => user.email === email);
       if (user) {
         return user;
+      }else {
+        console.log("not existing user ")
+        return null;
       }
-      throw new Error(`Couldn't find user with email: ${email}`);
     },
     findById: (id) => {
       const user = database.find((user) => user.id === id);
