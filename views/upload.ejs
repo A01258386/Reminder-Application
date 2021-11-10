@@ -102,6 +102,8 @@
         }).then(res => res.json())
             .then(data => {
                spinner.style.display = 'none';
+               //refresh page
+                location.reload();
             })
     })
     function readURL(input) {

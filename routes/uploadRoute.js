@@ -11,7 +11,7 @@ router.post('/',upload.single("file"), async (req, res) => {
         const url = await require("imgur").uploadFile(`./uploads/${req.file.filename}`)
         res.json({ url: url.link });
         let user = userModel.findById(req.user.id);
-        user.avatar = url.link;
+        user.image = url.link;
         fs.unlinkSync(`./uploads/${req.file.filename}`);
     } catch (err) {
         console.log(err);
