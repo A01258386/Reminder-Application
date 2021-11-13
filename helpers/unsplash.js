@@ -2,7 +2,7 @@ const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fet
 const { createApi } = require("unsplash-js")
 global.fetch = fetch;
 require("dotenv").config();
-console.log( process.env.UNSPLASH_ACCESS_KEY);
+// console.log( process.env.UNSPLASH_ACCESS_KEY);
 const accessKey = process.env.UNSPLASH_ACCESS_KEY;
 const unsplash = createApi({
     accessKey
