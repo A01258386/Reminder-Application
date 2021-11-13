@@ -7,16 +7,22 @@ const database = [
       name: "Jimmy Smith",
       email: "jimmy123@gmail.com",
       password: "jimmy123!",
+
       image: defaultImage,
-      reminders: [{ id: 1, title: "abc", description: "abcabc", completed: false }]
+      reminders: [{ id: 1, title: "abc", description: "abcabc", completed: false }],
+      role: "admin"
+
     },
     {
       id: 2,
       name: "Johnny Doe",
       email: "johnny123@gmail.com",
       password: "johnny123!",
+
       image: defaultImage,
+      role: "user",
       reminders: [{ id: 1, title: "abc", description: "abcabc", completed: false }]
+
     },
     {
       id: 3,
@@ -24,6 +30,7 @@ const database = [
       email: "jonathan123@gmail.com",
       password: "jonathan123!",
       image: defaultImage,
+      role: "user",
       reminders: [{ id: 1, title: "abc", description: "abcabc", completed: false }]
     },
     {
@@ -32,6 +39,7 @@ const database = [
       email: "selo@a",
       password: "selo",
       image: defaultImage,
+      role: "user",
       reminders: []
     },
   ];
