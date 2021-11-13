@@ -3,7 +3,6 @@ const expressLayouts = require("express-ejs-layouts");
 const session = require("express-session");
 const path = require("path");
 const port = process.env.port || 8000;
-
 const app = express();
 
 app.set("view engine", "ejs");
@@ -22,7 +21,7 @@ app.use(
 );
 
 const passport = require("./middleware/passport");
-const { authRouter, reminderRouter } = require("./routes")
+const { authRouter, reminderRouter,uploadRouter } = require("./routes")
 
 // Middleware for express
 app.use(express.json());
@@ -44,11 +43,13 @@ app.use((req, res, next) => {
 });
 
 app.use((req, res, next) => {
-  res.locals=({
+  res.locals = ({
     user: req.user || null,
   });
   next()
 });
+
+app.use("/upload" ,uploadRouter );
 
 app.use("/reminder", reminderRouter);
 

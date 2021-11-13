@@ -19,9 +19,9 @@ let authController = {
         failureRedirect : "/login",
 }),
 
-  registerSubmit: (req, res) => {
+  registerSubmit: async (req, res) => {
     const { name, email, password } = req.body;
-    let newUser = User.userModel.create({ name, email, password })
+    let newUser =await  User.userModel.create({ name, email, password })
     req.user = newUser;
     req.login(newUser, (err) => {
       if (err) {
