@@ -34,12 +34,15 @@ If user logged in , he/she is able to see 'create' and 'list reminders' and see 
 middle for ensuring users are logged in and forward authentication created
 user model and routes created
 
-
-
-
-
-
 Yi Dong:
 Worked on registration and login on Yi_Branch
 Able to register new user
 Able to login via existing users
+
+
+November 8-14 (Third Sprint)
+
+Yi Dong:
+Created middleware to check for admin role
+Created /admin dashboard
+Created admin route with session display and revoke function

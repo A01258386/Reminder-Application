@@ -21,7 +21,7 @@ app.use(
 );
 
 const passport = require("./middleware/passport");
-const { authRouter, reminderRouter,uploadRouter } = require("./routes")
+const { authRouter, reminderRouter,uploadRouter, adminRouter } = require("./routes")
 
 // Middleware for express
 app.use(express.json());
@@ -30,17 +30,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use((req, res, next) => {
-  console.log(`User details are: `);
-  console.log(req.user);
+// app.use((req, res, next) => {
+//   console.log(`User details are: `);
+//   console.log(req.user);
 
-  console.log("Entire session object:");
-  console.log(req.session);
+//   console.log("Entire session object:");
+//   console.log(req.session);
 
-  console.log(`Session details are: `);
-  console.log(req.session.passport);
-  next();
-});
+//   console.log(`Session details are: `);
+//   console.log(req.session.passport);
+//   next();
+// });
 
 app.use((req, res, next) => {
   res.locals = ({
@@ -54,6 +54,8 @@ app.use("/upload" ,uploadRouter );
 app.use("/reminder", reminderRouter);
 
 app.use("/auth", authRouter);
+
+app.use("/admin", adminRouter);
 
 app.listen(port, () => {
   console.log(`🚀 Server has started on port ${port}`);

@@ -21,13 +21,6 @@
     "express": "^4.14.0",
     "express-ejs-layouts": "^2.2.0",
     "express-session": "^1.17.2",
-<<<<<<< HEAD
-    "method-override": "^2.3.7",
-    "mongoose": "^4.7.7",
-    "nodemon": "^1.11.0",
-    "passport": "^0.5.0",
-    "passport-local": "^1.0.0"
-=======
     "imgur": "^1.0.2",
     "method-override": "^2.3.7",
     "mongoose": "^4.7.7",
@@ -39,6 +32,5 @@
     "passport-js": "^1.0.0",
     "passport-local": "^1.0.0",
     "unsplash-js": "^7.0.15"
->>>>>>> 91488d967bb83688fb2a03c1c6b846e3f2cd3f56
   }
 }

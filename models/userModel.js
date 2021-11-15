@@ -1,44 +1,3 @@
-<<<<<<< HEAD
-const database = [
-  {
-    id: 1,
-    name: "Jimmy Smith",
-    email: "jimmy123@gmail.com",
-    password: "jimmy123!",
-  },
-  {
-    id: 2,
-    name: "Johnny Doe",
-    email: "johnny123@gmail.com",
-    password: "johnny123!",
-  },
-  {
-    id: 3,
-    name: "Jonathan Chen",
-    email: "jonathan123@gmail.com",
-    password: "jonathan123!",
-  },
-];
-
-const userModel = {
-  findOne: (email) => {
-    const user = database.find((user) => user.email === email);
-    if (user) {
-      return user;
-    }
-    throw new Error(`Couldn't find user with email: ${email}`);
-  },
-  findById: (id) => {
-    const user = database.find((user) => user.id === id);
-    if (user) {
-      return user;
-    }
-    throw new Error(`Couldn't find user with id: ${id}`);
-  },
-};
-
-module.exports = { database, userModel };
-=======
 const defaultImage = "https://i.imgur.com/9pNffkj.png"
 const { generatePictureUrl } = require("../helpers/unsplash")
 const database = [
@@ -87,7 +46,7 @@ const database = [
   
   const userModel = {
     findOne: (email) => {
-      console.log("current user data:",database)
+      // console.log("current user data:",database)
       const user = database.find((user) => user.email === email);
       if (user) {
         return user;
@@ -136,4 +95,3 @@ const database = [
   
   module.exports = { database, userModel };
   
->>>>>>> 91488d967bb83688fb2a03c1c6b846e3f2cd3f56
