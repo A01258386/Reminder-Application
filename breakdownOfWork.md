@@ -24,7 +24,7 @@ Create Registration feature
 Create log in feature - creates session and redirect to reminders page
 Block unsigned in users from accessing reminders and reminder/ pages
 start working on github access
-handled merge conflicts
+
 
 Gokce Gokmen:
 Added registration feature and redirect
@@ -43,6 +43,9 @@ Able to login via existing users
 November 7-14 (Third Sprint)
 
 Steven Chang:
+github log in functional and work with other aspects of the web
+restrucre database so it works with profile picture as well as admin feature 
+handled merge conflicts
 
 Gokce Gokmen:
 A default profile picture is created for empty profile pictures. source : https://imgur.com/gallery/DM1I2HU
@@ -53,3 +56,7 @@ source for spinner : https://getbootstrap.com/docs/4.2/components/spinners/
 For responsive user interface, we added profile picture and name on navigation bar.
 
 Yi Dong:
+Created middleware to check for admin role Created /admin dashboard Created admin route with session display and revoke function
+Created middleware to check for admin role 
+Created /admin dashboard 
+Created admin route with session display and revoke function
