@@ -24,7 +24,7 @@ Create Registration feature
 Create log in feature - creates session and redirect to reminders page
 Block unsigned in users from accessing reminders and reminder/ pages
 start working on github access
-
+handled merge conflicts
 
 Gokce Gokmen:
 Added registration feature and redirect
