@@ -12,6 +12,10 @@
       <a class="nav-item nav-link" href="/upload">Upload</a>
       <span class="nav-item nav-link"> <%=user?user.name:''%> </span>
       <img src="<%=user.image%>" alt="Reminder Logo" width="32" height="32">
+      <% if(user.role == "admin"){ %>
+        <a class="nav-item nav-link" href="/admin"> Admin </a>
+      <% } %>
+      
       <% }else{ %>
       <a class="nav-item nav-link" href="/auth/login">Login</a>
       <a class="nav-item nav-link" href="/auth/register">Register</a>

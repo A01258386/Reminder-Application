@@ -24,10 +24,7 @@ Create Registration feature
 Create log in feature - creates session and redirect to reminders page
 Block unsigned in users from accessing reminders and reminder/ pages
 start working on github access
-<<<<<<< HEAD
 handled merge conflicts
-=======
->>>>>>> 7f75daf78551bec4f85739ee38bef76f106876bb
 
 Gokce Gokmen:
 Added registration feature and redirect
@@ -43,7 +40,6 @@ Able to register new user
 Able to login via existing users
 
 
-<<<<<<< HEAD
 November 7-14 (Third Sprint)
 
 Steven Chang:
@@ -57,11 +53,3 @@ source for spinner : https://getbootstrap.com/docs/4.2/components/spinners/
 For responsive user interface, we added profile picture and name on navigation bar.
 
 Yi Dong:
-=======
-November 8-14 (Third Sprint)
-
-Yi Dong:
-Created middleware to check for admin role
-Created /admin dashboard
-Created admin route with session display and revoke function
->>>>>>> branchformerge
