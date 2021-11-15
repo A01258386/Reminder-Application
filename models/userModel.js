@@ -46,7 +46,7 @@ const database = [
   
   const userModel = {
     findOne: (email) => {
-      console.log("current user data:",database)
+      // console.log("current user data:",database)
       const user = database.find((user) => user.email === email);
       if (user) {
         return user;

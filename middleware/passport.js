@@ -43,7 +43,7 @@ const githubLogin = new GitHubStrategy(
 function(accessToken, refreshToken, profile, done) {
   // asynchronous verification, for effect...
     const user = userController.findOrAppend(profile);
-    console.log(profile)
+    // console.log(profile)
     if (user){
       done(null,user)
     }else{
