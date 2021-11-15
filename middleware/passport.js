@@ -20,8 +20,8 @@ const localLogin = new LocalStrategy(
 
 
 
-let GITHUB_CLIENT_ID = "a956801e4b8324294c55";
-let GITHUB_CLIENT_SECRET = "3e512ca1fb7eb0e615e8d71a2a4b087468486d89";
+let GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
+let GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
 
 // Passport session setup.
 //   To support persistent login sessions, Passport needs to be able to
