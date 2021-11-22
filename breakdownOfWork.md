@@ -66,15 +66,6 @@ November 14-21 (Forth Sprint)
 Steven Chang:
 
 Gokce Gokmen:
-prisma client generated
-datasourse sqlite created
-Reminder and User table created
-reminder_controller syncronized
-userController syncronized
-static database cancelled and moved to PrismaClient
-createcreateReminder,updateReminder,deleteReminder user functions created and findOne,findByID,create and findOrAppendGithub functions updated for prisma
-
-
 
 Yi Dong:
 
