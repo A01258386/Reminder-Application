@@ -60,12 +60,3 @@ Created middleware to check for admin role Created /admin dashboard Created admi
 Created middleware to check for admin role 
 Created /admin dashboard 
 Created admin route with session display and revoke function
-
-November 14-21 (Forth Sprint)
-
-Steven Chang:
-
-Gokce Gokmen:
-
-Yi Dong:
-
